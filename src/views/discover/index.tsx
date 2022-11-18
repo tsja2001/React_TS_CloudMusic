@@ -2,6 +2,7 @@ import React, { memo, Suspense, useEffect } from 'react'
 import type { ReactNode } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import hyRequest from '@/server'
+import NavBar from './c-cpns/nav-bar'
 
 interface IProps {
   children?: ReactNode
@@ -16,25 +17,8 @@ const Discover: React.FC<IProps> = () => {
 
   return (
     <div className="Discover">
-      <div>Discover</div>
-      <button>
-        <Link to="/discover/recommend">recommend</Link>
-      </button>
-      <button>
-        <Link to="/discover/ranking">ranking</Link>
-      </button>
-      <button>
-        <Link to="/discover/songs">songs</Link>
-      </button>
-      <button>
-        <Link to="/discover/djradio">djradio</Link>
-      </button>
-      <button>
-        <Link to="/discover/artist">artist</Link>
-      </button>
-      <button>
-        <Link to="/discover/album">album</Link>
-      </button>
+      <NavBar></NavBar>
+
       <Suspense>
         <Outlet></Outlet>
       </Suspense>
