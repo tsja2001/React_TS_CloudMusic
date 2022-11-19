@@ -5,11 +5,18 @@ export const getBenners = () => {
     url: '/banner'
   })
 }
+
 export const getHotRecommend = (limit = 30) => {
   return hyRequest.get({
     url: '/personalized',
     params: {
       limit
     }
+  })
+}
+
+export function getNewAlbum() {
+  return hyRequest.get({
+    url: '/album/newest'
   })
 }

@@ -1,6 +1,6 @@
 import type {
   AxiosRequestConfig,
-  AxiosResponse,
+  AxiosResponse
 } from 'axios'
 
 // 为返回的数据, 增加code和data元素

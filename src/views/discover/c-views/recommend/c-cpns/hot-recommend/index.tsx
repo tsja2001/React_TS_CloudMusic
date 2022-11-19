@@ -1,9 +1,8 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo } from 'react'
 import type { ReactNode } from 'react'
 import { RecommendWrapper } from './style'
 import AreaHeaderV1 from '@/compontens/area-header-v1'
-import { fetchHotRecommend } from '../../store/recommend'
-import { useMyDispatch, useMySelector } from '@/store'
+import { useMySelector } from '@/store'
 import SongMenuItem from '@/compontens/song-menu-item'
 
 interface IProps {
@@ -11,11 +10,6 @@ interface IProps {
 }
 
 const HotRecommend: React.FC<IProps> = () => {
-  const dispatch = useMyDispatch()
-  useEffect(() => {
-    dispatch(fetchHotRecommend())
-  }, [])
-
   const { hotRecommend } = useMySelector((state) => ({
     hotRecommend: state.recommend.hotRecommend
   }))
