@@ -1,4 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit'
+import {
+  configureStore,
+  createAsyncThunk
+} from '@reduxjs/toolkit'
 import {
   useSelector,
   TypedUseSelectorHook,
@@ -7,10 +10,12 @@ import {
 } from 'react-redux'
 
 import counterReducer from './modules/counter'
+import recommendReducer from '@/views/discover/c-views/recommend/store/recommend'
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer
+    counter: counterReducer,
+    recommend: recommendReducer
   }
 })
 

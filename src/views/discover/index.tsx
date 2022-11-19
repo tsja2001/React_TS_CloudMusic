@@ -9,12 +9,6 @@ interface IProps {
 }
 
 const Discover: React.FC<IProps> = () => {
-  useEffect(() => {
-    hyRequest.get({ url: '/banner' }).then((res) => {
-      console.log('[ res ] >', res)
-    })
-  }, [])
-
   return (
     <div className="Discover">
       <NavBar></NavBar>
